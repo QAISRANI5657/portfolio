@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Premium Portfolio: Next.js (Static Export)
 
-## Getting Started
+A conversion focused, animated portfolio for freelance platforms (LinkedIn, Upwork, Fiverr). Ships as static HTML/CSS/JS for **GitHub Pages**, and works on **Vercel** with zero config.
 
-First, run the development server:
+## Stack
+
+- **Next.js 15** (App Router) + **TypeScript**
+- **Tailwind CSS v4**
+- **Framer Motion** (scroll reveals, hovers, loader, counters)
+- **next-themes** (dark / light)
+- **GitHub REST API** (latest repos + stars/forks) + public contribution chart image
+
+## Quick start
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Personalize content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **`src/lib/site-config.ts`**: name, headline, URLs, stats, about copy, GitHub username default.
+2. **`src/lib/projects.ts`**: projects, services, skills, testimonials; swap Unsplash URLs for screenshots in `public/`.
+3. **`.env.local`**: copy from `.env.example` and fill real links (recommended for GitHub API + absolute SEO URLs).
 
-## Learn More
+## Production build (static export)
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Static output is written to **`out/`**. This repo uses `output: "export"` in `next.config.ts`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy to GitHub Pages (project site)
 
-## Deploy on Vercel
+If your site URL looks like `https://<user>.github.io/<repo>/`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Set **`NEXT_PUBLIC_BASE_PATH`** to your repository name with a leading slash, e.g. `/PortFolio`.
+2. Set **`NEXT_PUBLIC_SITE_URL`** to the full public URL (no trailing slash is fine).
+3. Build locally or in CI, then publish the **`out/`** folder to the `gh-pages` branch (or use **GitHub Actions** with `peaceiris/actions-gh-pages`).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Example build env in GitHub Actions:
+
+```yaml
+env:
+  NEXT_PUBLIC_BASE_PATH: /PortFolio
+  NEXT_PUBLIC_SITE_URL: https://yourusername.github.io/PortFolio
+  NEXT_PUBLIC_GITHUB_USERNAME: QAISRANI5657
+```
+
+**User/organization site** (`https://<user>.github.io` with no subpath): leave `NEXT_PUBLIC_BASE_PATH` unset.
+
+## Deploy to Vercel
+
+Import the repo, set the same `NEXT_PUBLIC_*` variables, deploy. You typically **do not** need `NEXT_PUBLIC_BASE_PATH` on Vercel’s default domain.
+
+## Contact form
+
+- With **`NEXT_PUBLIC_FORMSPREE_ID`**: submits to Formspree.
+- Without it: **Submit** opens a prefilled **mailto:** using your configured email.
+
+## Design notes (palette, type, motion)
+
+- **Palette**: deep slate background (`#030712`) + cyan (`#38bdf8`) + violet (`#a78bfa`) accents; light mode uses cool off‑white (`#f4f6fb`) with blue/violet accents for a SaaS feel.
+- **Typography**: **Syne** (display) + **DM Sans** (body) via `next/font` for fast, stable loading.
+- **Motion**: page load reveal, scroll blur in sections, springy cards, spring cursor glow (desktop), subtle particle field, stat counters on view.
+- **Conversion**: repeated CTAs (Book a call / Hire me), trust strip in hero, services framed as outcomes, testimonials + GitHub proof, low friction contact.
+
+## Scripts
+
+| Command        | Description                |
+| -------------- | -------------------------- |
+| `npm run dev`  | Dev server (Turbopack)     |
+| `npm run build`| Static export to `out/`    |
+| `npm run start`| Serves production (non-export) |
+| `npm run lint` | ESLint                     |
+
+## License
+
+Private / personal use; update as you prefer.

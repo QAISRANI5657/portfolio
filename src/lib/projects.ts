@@ -43,6 +43,30 @@ export const projects: Project[] = [
     image:
       "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
   },
+  {
+    id: "smilecraft-dental",
+    title: "SmileCraft Dental",
+    description:
+      "Modern dental studio site with services, team profile, appointment booking, patient reviews, smile gallery, and FAQ — built to build trust and drive new patient bookings.",
+    stack: ["React", "Tailwind CSS", "Framer Motion", "GitHub Pages"],
+    tags: ["Healthcare", "Booking", "Landing"],
+    repoUrl: "https://github.com/qaisrani5657/dentist",
+    demoUrl: "https://qaisrani5657.github.io/dentist/",
+    image:
+      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: "novacart",
+    title: "NovaCart",
+    description:
+      "Premium ecommerce showcase with product categories, featured catalog, filters, customer reviews, and newsletter signup — designed for tech retail with a polished, conversion focused storefront feel.",
+    stack: ["React", "Tailwind CSS", "Framer Motion", "GitHub Pages"],
+    tags: ["Ecommerce", "Retail", "Catalog"],
+    repoUrl: "https://github.com/qaisrani5657/ecommerce",
+    demoUrl: "https://qaisrani5657.github.io/ecommerce/",
+    image:
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
+  },
 ];
 
 export const services = [

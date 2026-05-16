@@ -4,6 +4,7 @@
  */
 
 import { resolveContactEmail } from "./email-links";
+import { withBasePath } from "./utils";
 
 export const site = {
   /** Browser / nav brand */
@@ -16,8 +17,8 @@ export const site = {
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
     "https://qaisrani5657.github.io/portfolio",
   locale: "en_US",
-  /** Served from `/profile.png` in `public/` */
-  profileImage: "/profile.png",
+  /** Served from `public/profile.png` (basePath-aware for GitHub Pages). */
+  profileImage: withBasePath("/profile.png"),
 };
 
 export const social = {

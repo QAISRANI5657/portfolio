@@ -20,16 +20,16 @@ export type Testimonial = {
 /** `image` can be a remote URL or a file in `public/` (e.g. `/ai-vibe-web-studio.png`). */
 export const projects: Project[] = [
   {
-    id: "ai-vibe-web-studio",
-    title: "AI Vibe Web Studio",
+    id: "smilecraft-dental",
+    title: "SmileCraft Dental",
     description:
-      "Premium agency site for AI powered web development: services, portfolio, process, testimonials, and contact — built to convert founders and marketing teams with fast launch positioning.",
+      "Modern dental studio site with services, team profile, appointment booking, patient reviews, smile gallery, and FAQ — built to build trust and drive new patient bookings.",
     stack: ["React", "Tailwind CSS", "Framer Motion", "GitHub Pages"],
-    tags: ["Agency", "Landing", "AI"],
-    repoUrl: "https://github.com/qaisrani5657/services",
-    demoUrl: "https://qaisrani5657.github.io/services/",
+    tags: ["Healthcare", "Booking", "Landing"],
+    repoUrl: "https://github.com/qaisrani5657/dentist",
+    demoUrl: "https://qaisrani5657.github.io/dentist/",
     image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
   },
   {
     id: "urban-flame-kitchen",
@@ -44,18 +44,6 @@ export const projects: Project[] = [
       "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    id: "smilecraft-dental",
-    title: "SmileCraft Dental",
-    description:
-      "Modern dental studio site with services, team profile, appointment booking, patient reviews, smile gallery, and FAQ — built to build trust and drive new patient bookings.",
-    stack: ["React", "Tailwind CSS", "Framer Motion", "GitHub Pages"],
-    tags: ["Healthcare", "Booking", "Landing"],
-    repoUrl: "https://github.com/qaisrani5657/dentist",
-    demoUrl: "https://qaisrani5657.github.io/dentist/",
-    image:
-      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
     id: "novacart",
     title: "NovaCart",
     description:
@@ -66,6 +54,18 @@ export const projects: Project[] = [
     demoUrl: "https://qaisrani5657.github.io/ecommerce/",
     image:
       "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    id: "ai-vibe-web-studio",
+    title: "AI Vibe Web Studio",
+    description:
+      "Premium agency site for AI powered web development: services, portfolio, process, testimonials, and contact — built to convert founders and marketing teams with fast launch positioning.",
+    stack: ["React", "Tailwind CSS", "Framer Motion", "GitHub Pages"],
+    tags: ["Agency", "Landing", "AI"],
+    repoUrl: "https://github.com/qaisrani5657/services",
+    demoUrl: "https://qaisrani5657.github.io/services/",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
